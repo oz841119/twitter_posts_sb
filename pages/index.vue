@@ -39,7 +39,7 @@ export default {
       width: 150px; // Desktop固定150px
       height: 100vh;
       background-color: red;
-      padding: 0 20px;
+      padding: 20px 20px 0 20px;
 
       @media screen and (max-width: 576px) {
         display: flex;
@@ -47,7 +47,7 @@ export default {
         justify-content: center;
         width: 100vw; 
         height: 120px;
-        padding: 0 20px;
+        padding: 0 20px 0 20px;
       }
     }
 
@@ -55,6 +55,11 @@ export default {
       max-width: 720px;
       background-color: blue;
       flex: 1;
+      padding: 20px 20px 0 20px;
+
+      @media screen and (max-width: 576px) {
+        padding: 0px 20px 0 20px;
+      }
     }
   }
 </style>

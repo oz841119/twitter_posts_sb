@@ -16,15 +16,12 @@
     display: flex;
     flex-direction: column;
     height: 100px;
-    margin-top: 20px;
     justify-content: space-around;
 
     @media screen and (max-width: 576px) {
       width: 100%;
-      margin-top: 0;
       height: 90%;
       justify-content: space-around;
-      margin-top: 0;
     }
 
     .search_inp, .submit_btn {
