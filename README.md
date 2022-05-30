@@ -1,5 +1,6 @@
 # twitter_posts_sb
-
+1. 斷點 - 576px
+2. 左欄固定為150px 右欄最大寬度為720px 
 ## Build Setup
 
 ```bash
