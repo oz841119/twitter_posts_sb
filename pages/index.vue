@@ -3,8 +3,7 @@
     <div class="searchWrap">
       <TwitterSearchBox/>
     </div>
-
-    <div class="mainWrap">
+    <div class="mainWrap" @scroll="scroolEvent">
       <TwitterResultList/>
     </div>
   </div>
@@ -22,6 +21,13 @@ export default {
     TwitterResultList
   },
   methods: {
+    scroolEvent(e) {
+      if(e.srcElement.scrollTop + e.srcElement.offsetHeight >= e.srcElement.scrollHeight - 10) {
+        if(this.$store.state.isAllowGetPostData) { // 簡易throttle
+          this.$store.dispatch('getPostData')
+        }
+      }
+    }
   }
 }
 </script>
@@ -40,7 +46,6 @@ export default {
     .searchWrap {
       width: 150px; // Desktop固定150px
       height: 100vh;
-      background-color: red;
       padding: 20px 20px 0 20px;
 
       @media screen and (max-width: 576px) {
@@ -55,7 +60,6 @@ export default {
 
     .mainWrap {
       max-width: 720px;
-      background-color: blue;
       height: 100vh;
       min-height: 100vh;
       flex: 1;

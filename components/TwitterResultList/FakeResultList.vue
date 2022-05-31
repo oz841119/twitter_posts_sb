@@ -1,8 +1,10 @@
 <template>
   <div class="fake_result_list">
-    <div class="posts_list">
-      <a class="post_wrap" v-for="post in this.$store.state.postList" :href="post.postLink" :key="post.postLink">
-        <div class="user_photo">{{post.userPhoto}}</div>
+    <div class="posts_list" @click="addNewPost()">
+      <a class="post_wrap" v-for="(post, index) in this.$store.state.postList" :href="post.postLink" :key="index">
+        <div class="user_photo_wrap">
+          <img class="photo" :src="post.userPhoto" alt="">
+        </div>
         <div class="post_info">
           <div class="user_name">{{post.userName}}</div>
           <div class="post_content">{{post.postContent}}</div>
@@ -20,6 +22,11 @@
   export default {
     name: "FakeResultList",
     components: {},
+    methods: {
+      addNewPost() {
+        this.$store.commit('addPost')
+      },
+    }
 }
 </script>
 
@@ -28,17 +35,21 @@
     
     .posts_list {
       padding: 20px;
-      background-color: green;
 
       .post_wrap {
         display: flex;
-        background-color: aqua;
         margin-bottom: 20px;
 
-        .user_photo {
+        .user_photo_wrap {
           min-width: 150px;
+          max-width: 150px;
           height: 200px;
-          background-color: bisque;
+          overflow: hidden;
+
+          .photo {
+            width: 100%;
+            height: 200px;
+          }
         }
 
         .post_info {
