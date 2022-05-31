@@ -20,14 +20,24 @@ export default {
     TwitterSearchBox,
     TwitterResultList
   },
+  mounted() {
+    window.addEventListener('scroll', () => { // For RWD，暫時不加斷點判斷，desktop頁面高度為100vh滾動，故不會觸發callback，只是會掛上監聽。
+      console.log('滾動');
+      if(document.documentElement.scrollTop + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 10) {
+        if(this.$store.state.isAllowGetPostData) { // 簡易throttle
+          this.$store.dispatch('getPostData')
+        }
+      }
+    })
+  },
   methods: {
-    scroolEvent(e) {
+    scroolEvent(e) { // For desktop，元素滾動。
       if(e.srcElement.scrollTop + e.srcElement.offsetHeight >= e.srcElement.scrollHeight - 10) {
         if(this.$store.state.isAllowGetPostData) { // 簡易throttle
           this.$store.dispatch('getPostData')
         }
       }
-    }
+    },
   }
 }
 </script>
