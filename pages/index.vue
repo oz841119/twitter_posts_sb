@@ -14,11 +14,14 @@
 import '../assets/style/initStyle.css'
 import TwitterSearchBox from '../components/TwitterSearchBox.vue'
 import TwitterResultList from '../components/TwitterResultList.vue'
+
 export default {
   name: 'IndexPage',
   components: {
     TwitterSearchBox,
     TwitterResultList
+  },
+  methods: {
   }
 }
 </script>
@@ -27,7 +30,6 @@ export default {
   .index {
     display: flex;
     width: 100vw;
-    overflow: hidden;
     flex-direction: row;
     justify-content: center;
 
@@ -54,8 +56,11 @@ export default {
     .mainWrap {
       max-width: 720px;
       background-color: blue;
+      height: 100vh;
+      min-height: 100vh;
       flex: 1;
       padding: 20px 20px 0 20px;
+      overflow: scroll;
 
       @media screen and (max-width: 576px) {
         padding: 0px 20px 0 20px;
