@@ -1,6 +1,17 @@
 # twitter_posts_sb
-1. 斷點 - 576px
-2. 左欄固定為150px 右欄最大寬度為720px 
+1. O RWD 斷點 - 576px
+2. O 左欄固定為150px 右欄最大寬度為720px 
+3. O 滾動讀取
+4. O Vuex
+5. X Nuxt.js (僅建置)
+6. X Twitter API (能力不足，可能是API不允許CORS，無法在瀏覽器正確使用該API，建置代理能力不足，)
+7. X 判斷當前時間與貼文時間的距離
+8. X 時間格式轉換
+9. X 搜尋台灣 查參 
+10. X 單元測試 (能力不足，無法建構測試)
+11. X nuxt builtin routing for pages (?)
+
+
 ## Build Setup
 
 ```bash
