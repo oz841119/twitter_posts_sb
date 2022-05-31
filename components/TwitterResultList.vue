@@ -1,23 +1,17 @@
 <template>
   <div class="twitter_result_list">
-    <div>123</div>
-    <div>123</div>
-    <div>123</div>
-    <div>123</div>
+    <FakeResultList/>
   </div>
 </template>
 
 <script>
+import FakeResultList from './TwitterResultList/FakeResultList.vue';
   export default {
-    name: 'TwitterResultList'
-  }
+    name: "TwitterResultList",
+    components: { FakeResultList }
+}
 </script>
 
 <style lang="scss" scoped>
-  // .twitter_result_list {
-  //   background-color: red;
-  //   height: 100vh;
-  //   width: 100px;
-  // }
   
 </style>
