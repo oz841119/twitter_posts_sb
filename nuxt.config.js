@@ -1,3 +1,13 @@
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/twitter_posts_sb/'
+        }
+      }
+    : {}
+
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -18,6 +28,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  ...routerBase,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
