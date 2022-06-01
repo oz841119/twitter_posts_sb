@@ -1,13 +1,21 @@
 <template>
   <div class="twitter_search_box">
-    <input type="text" class="search_inp">
-    <button class="submit_btn">Search</button>
+    <input type="text" class="search_inp" v-model="searchContent">
+    <button class="submit_btn" @click="searchSubmit(searchContent)">未實作</button>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'TwitterSearchBox'
+    name: 'TwitterSearchBox',
+    data() {
+      return {
+        searchContent: '根據API查參獲得資料'
+      }
+    },
+    methods: {
+      searchSubmit(contnet) {}
+    }
   }
 </script>
 
