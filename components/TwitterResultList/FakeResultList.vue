@@ -70,8 +70,12 @@
             display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
+            word-break: break-all;
           }
 
+          .post_date {
+            height: 45px;
+          }
         }
         
         &:last-child {
